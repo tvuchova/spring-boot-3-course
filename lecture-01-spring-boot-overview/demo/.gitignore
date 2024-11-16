@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+/.idea/lecture-01-spring-boot-overview.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/.idea/workspace.xml
+
