@@ -1,13 +1,13 @@
-package com.example.demo;
+package com.elsys.di_ioc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class DiIocApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(DiIocApplication.class, args);
 	}
 
 }
