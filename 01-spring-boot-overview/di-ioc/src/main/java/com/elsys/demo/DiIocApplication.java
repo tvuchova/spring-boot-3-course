@@ -1,4 +1,4 @@
-package com.elsys.di_ioc;
+package com.elsys.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

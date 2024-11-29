@@ -1,4 +1,4 @@
-package com.elsys.di_ioc;
+package com.elsys.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

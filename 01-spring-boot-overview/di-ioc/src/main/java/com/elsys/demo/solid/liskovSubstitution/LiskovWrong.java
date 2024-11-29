@@ -1,4 +1,4 @@
-package com.elsys.solid;
+package com.elsys.demo.solid.liskovSubstitution;
 
 public class LiskovWrong {
     public static void main(String[] args) {
@@ -40,12 +40,12 @@ public class LiskovWrong {
         @Override
         public void setWidth(int width) {
             this.width = width;
-            this.height = width; // Ensure both sides are equal
+            this.height = width;
         }
 
         @Override
         public void setHeight(int height) {
-            this.width = height; // Ensure both sides are equal
+            this.width = height;
             this.height = height;
         }
     }
@@ -57,6 +57,5 @@ public class LiskovWrong {
         System.out.println("Expected Area: 50");
         System.out.println("Actual Area: " + rectangle.getArea());
     }
-
 }
 

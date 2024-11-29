@@ -1,4 +1,4 @@
-package com.elsys.solid;
+package com.elsys.demo.solid.liskovSubstitution;
 
 public class LiskovRight {
     public static void main(String[] args) {
@@ -6,6 +6,7 @@ public class LiskovRight {
         System.out.println("Rectangle Area: " + rectangle.getArea());
 
         Shape square = new Square(5);
+        System.out.println("Square Area: " + square.getArea());
         System.out.println("Square Area: " + square.getArea());
     }
 
