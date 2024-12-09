@@ -1,0 +1,22 @@
+GET localhost:8082/di-ioc/api/foos?id=abc
+
+###
+POST localhost:8082/di-ioc/api/foos
+Content-Type: application/json
+
+{
+  "id": "abc",
+  "name": "def"
+}
+
+###
+POST localhost:8082/di-ioc/api/foos/1
+Content-Type: application/json
+
+{
+  "id": "abc",
+  "name": "def"
+}
+
+###
+GET localhost:8082/di-ioc/hello
