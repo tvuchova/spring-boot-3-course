@@ -7,7 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class UserService {
-    public String getUser(UserRepository userRepository) {
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    public String getUser() {
         log.info(userRepository.getRepository());
         return "User";
     }
