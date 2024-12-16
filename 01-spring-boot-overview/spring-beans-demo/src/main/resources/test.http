@@ -1,0 +1,17 @@
+GET localhost:8080/singleton
+
+###
+
+GET localhost:8080/prototype
+
+###
+GET localhost:8080/request
+
+###
+
+GET localhost:8080/session
+
+###
+GET localhost:8080/application
+
+###

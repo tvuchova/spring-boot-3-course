@@ -1,0 +1,34 @@
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 25,
+  "email": "john.doe@example.com",
+  "phone": "+1234567890",
+  "birthDate": "1995-01-01"
+}
+
+####
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "age": 15,
+  "email": "jane.doe@example.com",
+  "phone": "+1234567890",
+  "birthDate": "2010-01-01"
+}
+
+####
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "age": 15,
+  "email": "jane.doe@example.com",
+  "phone": "+1234567890",
+  "birthDate": "2010-01-01"
+}
