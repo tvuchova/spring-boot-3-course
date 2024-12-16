@@ -1,4 +1,4 @@
-package com.elsys.springbeansdemo;
+package com.elsys.springbeansdemo.lifecycle;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
