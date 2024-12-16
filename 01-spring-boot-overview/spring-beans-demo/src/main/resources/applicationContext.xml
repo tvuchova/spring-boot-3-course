@@ -3,12 +3,12 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="fileItemRepository" class="com.elsys.springbeansdemo.service.xml.repository.FileItemRepository" />
-  <bean id="inMemoryItemRepository" class="com.elsys.springbeansdemo.service.xml.repository.InMemoryItemRepository" />
+  <bean id="fileItemRepository" class="com.elsys.springbeansdemo.beanDefinition.xml.repository.FileItemRepository" />
+  <bean id="inMemoryItemRepository" class="com.elsys.springbeansdemo.beanDefinition.xml.repository.InMemoryItemRepository" />
 
   <alias alias="activeItemRepository" name="inMemoryItemRepository" />
 
-  <bean id="itemServiceImpl" class="com.elsys.springbeansdemo.service.xml.ItemServiceImpl">
+  <bean id="itemServiceImpl" class="com.elsys.springbeansdemo.beanDefinition.xml.ItemServiceImpl">
     <constructor-arg ref="activeItemRepository" />
   </bean>
 </beans>

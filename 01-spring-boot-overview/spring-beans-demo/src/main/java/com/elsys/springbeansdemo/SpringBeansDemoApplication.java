@@ -1,11 +1,12 @@
 package com.elsys.springbeansdemo;
 
-import com.elsys.springbeansdemo.repository.UserRepository;
+import com.elsys.springbeansdemo.awareness.MyBeanNameAware;
+import com.elsys.springbeansdemo.lifecycle.ExampleBean;
 import com.elsys.springbeansdemo.scopes.StudentPrototype;
-import com.elsys.springbeansdemo.service.constructorInjection.UserService;
-import com.elsys.springbeansdemo.service.setterInjection.EmailMessageService;
-import com.elsys.springbeansdemo.service.setterInjection.MessageProcessor;
-import com.elsys.springbeansdemo.service.xml.ItemService;
+import com.elsys.springbeansdemo.injectionTypes.constructorInjection.UserService;
+import com.elsys.springbeansdemo.injectionTypes.setterInjection.EmailMessageService;
+import com.elsys.springbeansdemo.injectionTypes.setterInjection.MessageProcessor;
+import com.elsys.springbeansdemo.beanDefinition.xml.ItemService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -38,10 +39,13 @@ public class SpringBeansDemoApplication {
         StudentPrototype studentPrototype2 = context.getBean("studentPrototype", StudentPrototype.class);
         log.info(studentPrototype2.generateReport("John Do"));
 
-        //MyApplicationContextAware awareBean = context.getBean(MyApplicationContextAware.class)
-        //awareBean.printBeans();
+        //MyApplicationContextAware awareBean = context.getBean(MyApplicationContextAware.class);
+        //for (String beanName : awareBean.printBeans()) {
+        //    log.info(beanName);
 
-        //MyBeanNameAware awareBean = context.getBean(MyBeanNameAware.class);
-        //awareBean.printBeanName();
+        //}
+
+       // MyBeanNameAware awareBeanName = context.getBean(MyBeanNameAware.class);
+        //awareBeanName.printBeanName();
     }
 }
