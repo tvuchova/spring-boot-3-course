@@ -1,0 +1,26 @@
+GET localhost:8082/hello
+
+###
+
+GET localhost:8082/api/foos?id=abc
+
+###
+POST localhost:8082/api/foos
+Content-Type: application/json
+
+{
+  "id": "abc",
+  "name": "def"
+}
+
+###
+POST localhost:8082/api/foos/1
+Content-Type: application/json
+
+{
+  "id": "abc",
+  "name": "def"
+}
+
+###
+GET localhost:8082/hello

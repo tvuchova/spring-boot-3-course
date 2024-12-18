@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-params-value
+
+server:
+    port: 8082
+
+person:
+    name: John
+    age: 20
