@@ -9,18 +9,21 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @Tag(description = "User API", name = "User Services")
 @RestController
-public class UseController {
+public class UserController {
     private final UserService userService;
 
-    public UseController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -44,7 +47,7 @@ public class UseController {
                             content = @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = User.class)))
             })
-    public User addUser(User user) {
+    public User addUser(@RequestBody User user) {
         return userService.addUser(user);
     }
 
@@ -56,7 +59,7 @@ public class UseController {
                             content = @Content(mediaType = "application/json",
                                     schema = @Schema(implementation = User.class)))
             })
-    public User updateUser(int id, String newName) {
+    public User updateUser(@PathVariable int id, @RequestParam String newName) {
         return userService.updateUser(id, newName);
     }
 
@@ -67,7 +70,7 @@ public class UseController {
                             description = "Returns a boolean",
                             content = @Content(mediaType = "application/json"))
             })
-    public boolean deleteUser(int id) {
+    public boolean deleteUser(@PathVariable int id) {
         return userService.deleteUser(id);
     }
 }
