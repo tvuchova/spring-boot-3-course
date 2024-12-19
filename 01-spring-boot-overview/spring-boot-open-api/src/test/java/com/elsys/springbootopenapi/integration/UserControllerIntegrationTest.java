@@ -32,7 +32,6 @@ public class UserControllerIntegrationTest {
 
     @Test
     public void testFindAll() throws Exception {
-        // Извикваме GET към /users
         mockMvc.perform(get("/users"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
