@@ -1,5 +1,6 @@
 package com.elsys.springbeansdemo;
 
+import com.elsys.springbeansdemo.awareness.MyApplicationContextAware;
 import com.elsys.springbeansdemo.awareness.MyBeanNameAware;
 import com.elsys.springbeansdemo.lifecycle.ExampleBean;
 import com.elsys.springbeansdemo.scopes.StudentPrototype;
@@ -38,12 +39,11 @@ public class SpringBeansDemoApplication {
         log.info(studentPrototype.generateReport("John Doe"));
         StudentPrototype studentPrototype2 = context.getBean("studentPrototype", StudentPrototype.class);
         log.info(studentPrototype2.generateReport("John Do"));
+        MyApplicationContextAware awareBean = context.getBean(MyApplicationContextAware.class);
+        for (String beanName : awareBean.printBeans()) {
+            log.info(beanName);
 
-        //MyApplicationContextAware awareBean = context.getBean(MyApplicationContextAware.class);
-        //for (String beanName : awareBean.printBeans()) {
-        //    log.info(beanName);
-
-        //}
+        }
 
        // MyBeanNameAware awareBeanName = context.getBean(MyBeanNameAware.class);
         //awareBeanName.printBeanName();

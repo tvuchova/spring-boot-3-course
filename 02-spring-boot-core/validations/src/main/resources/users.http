@@ -26,7 +26,7 @@ POST http://localhost:8080/api/users
 Content-Type: application/json
 
 {
-  "name": "Jane Doe",
+
   "age": 15,
   "email": "jane.doe@example.com",
   "phone": "+1234567890",
