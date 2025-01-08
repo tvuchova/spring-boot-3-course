@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    @Operation(summary = "Returns all users", tags = {"User",},
+    @Operation(summary = "Returns all users.", tags = {"User",},
             responses = {
                     @ApiResponse(responseCode = "200",
                             description = "Returns all users",
@@ -52,24 +52,11 @@ public class UserController {
     }
 
     @PutMapping("/users/{id}")
-    @Operation(summary = "Update a user's name",
-            responses = {
-                    @ApiResponse(responseCode = "200",
-                            description = "Returns the updated user",
-                            content = @Content(mediaType = "application/json",
-                                    schema = @Schema(implementation = User.class)))
-            })
     public User updateUser(@PathVariable int id, @RequestParam String newName) {
         return userService.updateUser(id, newName);
     }
 
     @DeleteMapping("/users/{id}")
-    @Operation(summary = "Delete a user",
-            responses = {
-                    @ApiResponse(responseCode = "200",
-                            description = "Returns a boolean",
-                            content = @Content(mediaType = "application/json"))
-            })
     public boolean deleteUser(@PathVariable int id) {
         return userService.deleteUser(id);
     }

@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class WorkoutController {
     @GetMapping("/daily-workout")
     public String greet(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return "Hello, " + name + "!"+ " Start Your Brin$g Sally Up Training!";
+        return "Hello, " + name + "!"+ " Start Your Bring Sally Up Training Push ups!";
     }
 }

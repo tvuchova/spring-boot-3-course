@@ -5,18 +5,19 @@ import io.swagger.v3.oas.models.info.Info;
 import org.springdoc.core.customizers.OpenApiCustomizer;
 import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 public class OpenApiConfig {
     @Bean
     public GroupedOpenApi userApi() {
-        final String[] packagesToScan = {"com.controller"};
+        final String[] packagesToScan = {"com.elsys.springbootopenapi.controller"};
         return GroupedOpenApi
                 .builder()
                 .group("User API")
                 .packagesToScan(packagesToScan)
                 .pathsToMatch("/users/**")
                 .addOpenApiCustomizer(userApiCustomizer())
-
                 .build();
     }
 
