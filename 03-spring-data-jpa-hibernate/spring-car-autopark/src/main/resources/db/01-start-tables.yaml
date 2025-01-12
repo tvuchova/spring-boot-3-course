@@ -1,0 +1,105 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: admin
+      changes:
+        - createTable:
+            tableName: car_details
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: description
+                  type: VARCHAR(2550)
+              - column:
+                  name: color
+                  type: VARCHAR(255)
+              - column:
+                  name: seating_capacity
+                  type: INT
+              - column:
+                  name: fuel_type
+                  type: VARCHAR(255)
+
+  - changeSet:
+      id: 2
+      author: admin
+      changes:
+        - createTable:
+            tableName: cars
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: brand
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: model
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: manufacture_year
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: mileage
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: DECIMAL(10, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: car_details_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_cars_car_details
+                    references: car_details(id)
+  - changeSet:
+      id: 3
+      author: admin
+      changes:
+        - createTable:
+            tableName: car_images
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: car_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_car_images_cars
+                    references: cars(id)
+              - column:
+                  name: file_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: file_type
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: file_content
+                  type: bytea
+                  constraints:
+                    nullable: true

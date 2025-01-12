@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/cardb'
+    driverClassName: org.postgresql.Driver
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}

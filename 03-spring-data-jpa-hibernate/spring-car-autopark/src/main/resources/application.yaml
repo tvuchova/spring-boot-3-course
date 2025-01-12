@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: 'jdbc:postgresql://pg-3c1c8c6a-tvuchova-4832.g.aivencloud.com:11434/defaultdb?sslmode=require'
+    driverClassName: org.postgresql.Driver
+    username:  ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  liquibase:
+    change-log: classpath:/db/changelog/liquibase_changelog.xml
+  application:
+    name: 'car-service'
+
+car:
+  max-cars: 10
+server:
+  port: 8090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [ 'health', 'info' ]
+  endpoint:
+    health:
+      show-details: always
+
