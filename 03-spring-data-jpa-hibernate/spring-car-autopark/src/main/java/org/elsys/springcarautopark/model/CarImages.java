@@ -33,7 +33,4 @@ public class CarImages {
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     private Car car;
 
-  /*  @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "car_id", referencedColumnName = "id")
-    private Car car;*/
 }
