@@ -1,4 +1,10 @@
 spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
   datasource:
     url: 'jdbc:postgresql://pg-3c1c8c6a-tvuchova-4832.g.aivencloud.com:11434/defaultdb?sslmode=require'
     driverClassName: org.postgresql.Driver
@@ -22,4 +28,6 @@ management:
   endpoint:
     health:
       show-details: always
+
+
 

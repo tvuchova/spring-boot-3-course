@@ -3,6 +3,7 @@ package org.elsys.springcarautopark.model;
 
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -32,6 +33,12 @@ public class Car {
     private int manufactureYear;
     private int mileage;
     private double price;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private CarDetails carDetails;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    private List<CarImages> images;
 
 
 }

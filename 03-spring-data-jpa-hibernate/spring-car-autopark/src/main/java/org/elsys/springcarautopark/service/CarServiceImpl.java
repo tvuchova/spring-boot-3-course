@@ -36,19 +36,17 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> searchByBrand(String brand) {
-        //return carRepository.findCarsByBrand(brand);
-        return null;
+        return carRepository.findByBrand(brand);
     }
 
     @Override
     public List<Car> searchByYear(int manufactureYear) {
-       // return carRepository.findCarsByManufactureYear(manufactureYear);
-        return null;
+       return carRepository.findByManufactureYear(manufactureYear);
     }
 
     @Override
     public List<Car> searchByRange(double minPrice, double maxPrice) {
-        //return carRepository.findCarsByPriceBetween(minPrice, maxPrice);
-        return null;
+        return carRepository.findByPriceBetween(minPrice, maxPrice);
+
     }
 }
