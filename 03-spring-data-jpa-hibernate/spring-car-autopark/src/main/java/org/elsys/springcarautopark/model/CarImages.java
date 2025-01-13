@@ -29,7 +29,7 @@ public class CarImages {
     @Column(name="file_content", columnDefinition="BLOB")
     private byte[] data;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "car_id", referencedColumnName = "id")
     private Car car;
 
