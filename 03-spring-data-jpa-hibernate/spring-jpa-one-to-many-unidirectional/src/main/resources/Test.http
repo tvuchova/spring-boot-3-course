@@ -1,0 +1,20 @@
+### Create a new tutorial
+POST http://localhost:8080/api/tutorials
+Content-Type: application/json
+
+{
+  "title": "Spring Boot Tutorial",
+  "description": "Learn Spring Boot from scratch",
+  "published": true,
+  "comments": [
+    {
+      "content": "Great tutorial on Spring Boot"
+    },
+    {
+      "content": "Nice tutorial"
+    }
+  ]
+}
+
+### Get all tutorials
+GET http://localhost:8080/api/tutorials
