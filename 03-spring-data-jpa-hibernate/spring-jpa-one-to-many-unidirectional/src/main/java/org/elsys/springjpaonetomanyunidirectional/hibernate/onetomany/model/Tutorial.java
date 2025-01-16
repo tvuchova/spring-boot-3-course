@@ -33,4 +33,14 @@ public class Tutorial {
 
   public Tutorial() {
   }
+
+  public Tutorial(String title, String description, boolean b) {
+    this.title = title;
+    this.description = description;
+    this.published = b;
+  }
+
+  public void removeComments() {
+    comments.clear();
+  }
 }
