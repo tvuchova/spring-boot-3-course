@@ -1,11 +1,9 @@
-package org.elsys.springcarautopark.model;
+package org.elsys.springcarautopark.car.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,16 +15,15 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "car_details")
-public class CarDetails {
+@Table(name = "car_images")
+public class CarImages {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private int id;
-    private String description;
-    private String color;
-    private Integer seatingCapacity;
+    private Long id;
 
-    @Enumerated(EnumType.STRING)
-    private FUEL_TYPE fuelType;
+    private String fileName;
+    private String fileType;
+    @Column(name="file_content", columnDefinition="BLOB")
+    private byte[] data;
 
 }

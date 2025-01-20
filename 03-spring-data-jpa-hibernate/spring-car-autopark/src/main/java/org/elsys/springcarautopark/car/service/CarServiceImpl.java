@@ -1,8 +1,8 @@
-package org.elsys.springcarautopark.service;
+package org.elsys.springcarautopark.car.service;
 
 import org.elsys.springcarautopark.exception.LimitMaxCarsException;
-import org.elsys.springcarautopark.model.Car;
-import org.elsys.springcarautopark.repository.DatabaseCarRepository;
+import org.elsys.springcarautopark.car.model.Car;
+import org.elsys.springcarautopark.car.repository.DatabaseCarRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

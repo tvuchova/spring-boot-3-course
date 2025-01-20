@@ -1,20 +1,14 @@
-package org.elsys.springcarautopark.model;
+package org.elsys.springcarautopark.car.model;
 
 
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -33,11 +27,5 @@ public class Car {
     private int manufactureYear;
     private int mileage;
     private double price;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private CarDetails carDetails;
-
-    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
-    private List<CarImages> images;
 
 }

@@ -1,6 +1,6 @@
-package org.elsys.springcarautopark.service;
+package org.elsys.springcarautopark.car.service;
 
-import org.elsys.springcarautopark.model.Car;
+import org.elsys.springcarautopark.car.model.Car;
 
 import java.util.List;
 
