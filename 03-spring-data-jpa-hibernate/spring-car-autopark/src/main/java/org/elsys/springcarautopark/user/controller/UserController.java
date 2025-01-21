@@ -1,6 +1,7 @@
 package org.elsys.springcarautopark.user.controller;
 
 import org.elsys.springcarautopark.user.model.User;
+import org.elsys.springcarautopark.user.model.dto.UserDto;
 import org.elsys.springcarautopark.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -35,13 +36,13 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        User user = userService.getUserById(id);
+    public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
+        UserDto user = userService.getUserById(id);
         if (user != null) {
             return ResponseEntity.ok(user);
         } else {

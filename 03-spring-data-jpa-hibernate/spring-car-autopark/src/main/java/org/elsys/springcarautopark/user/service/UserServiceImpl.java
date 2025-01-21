@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.elsys.springcarautopark.user.model.ROLE;
 import org.elsys.springcarautopark.user.model.Roles;
 import org.elsys.springcarautopark.user.model.User;
+import org.elsys.springcarautopark.user.model.dto.UserDto;
+import org.elsys.springcarautopark.user.model.dto.UserMapper;
 import org.elsys.springcarautopark.user.repository.UserRepository;
 //import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,11 +16,13 @@ import java.util.List;
 @Slf4j
 public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
     //private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository/*, PasswordEncoder passwordEncoder*/) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper/*, PasswordEncoder passwordEncoder*/) {
         this.userRepository = userRepository;
         //this.passwordEncoder = passwordEncoder;
+        this.userMapper = userMapper;
     }
 
     public User findUserById(Long id) {
@@ -35,11 +39,15 @@ public class UserServiceImpl implements UserService{
         userRepository.save(user);
     }
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserDto> getAllUsers() {
+        return userRepository.findAll()
+                .stream()
+                .map(userMapper::toDto).toList();
     }
 
-    public User getUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
+    public UserDto getUserById(Long id) {
+        return userRepository.findById(id)
+                .map(userMapper::toDto)
+                .orElse(null);
     }
 }

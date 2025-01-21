@@ -1,17 +1,13 @@
-package org.elsys.springcarautopark.model;
-
+package org.elsys.springcarautopark.user.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import java.util.List;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class User {
-
-    private Long id;
+@NoArgsConstructor
+public class UserDto {
     private String name;
     private String email;
-
 }
