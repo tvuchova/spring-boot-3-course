@@ -14,33 +14,35 @@ import lombok.NoArgsConstructor;
 @Table(name = "tutorials")
 public class Tutorial {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-  @Column(name = "title")
-  private String title;
+    @Column(name = "title")
+    private String title;
 
-  @Column(name = "description")
-  private String description;
+    @Column(name = "description")
+    private String description;
 
-  @Column(name = "published")
-  private boolean published;
+    @Column(name = "published")
+    private boolean published;
 
-  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-  @JoinColumn(name = "tutorial_id")
-  private Set<Comment> comments = new HashSet<>();
+    //for bidirectional
+    // @OneToMany(mappedBy = "tutorial", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @JoinColumn(name = "tutorial_id")
+    private Set<Comment> comments = new HashSet<>();
 
-  public Tutorial() {
-  }
+    public Tutorial() {
+    }
 
-  public Tutorial(String title, String description, boolean b) {
-    this.title = title;
-    this.description = description;
-    this.published = b;
-  }
+    public Tutorial(String title, String description, boolean b) {
+        this.title = title;
+        this.description = description;
+        this.published = b;
+    }
 
-  public void removeComments() {
-    comments.clear();
-  }
+    public void removeComments() {
+        comments.clear();
+    }
 }
