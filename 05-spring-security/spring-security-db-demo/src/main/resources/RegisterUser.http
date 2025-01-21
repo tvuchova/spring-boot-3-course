@@ -1,0 +1,26 @@
+###
+POST localhost:8080/register
+Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW4=
+
+{
+    "name": "admin2",
+    "email": "john.doe@example.com",
+    "password": "securePassword123",
+    "roles": {
+        "id": 1
+    }
+}
+
+### POST request to example server
+###
+POST localhost:8080/register
+
+ {
+    "name": "user",
+    "email": "john.doe@example.com",
+    "password": "securePassword123",
+    "roles": {
+        "id": 1
+    }
+}
