@@ -23,13 +23,6 @@ public class Rental {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-   // @ManyToOne
-   // @JoinColumn(name = "user_id", referencedColumnName = "id")
-   // private User user;
-
-  //  @ManyToOne
-  //  @JoinColumn(name = "car_id", referencedColumnName = "id")
-  //  private Car car;
 
     @Enumerated(EnumType.STRING)
     private RentalStatus status;
