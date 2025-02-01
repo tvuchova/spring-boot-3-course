@@ -15,8 +15,11 @@
 5. Add an authorized redirect URI: http://localhost:8080/login/oauth2/code/google.
 6. Click "Create" to obtain your client_id and client_secret for your properties file.
 
+https://www.baeldung.com/spring-authorization-server-social-login-authentication
+
 
 https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps
 new app -> https://github.com/settings/applications/new
 
 
+https://blog.greenroots.info/nextjs-and-next-auth-v5-guide-to-social-logins
