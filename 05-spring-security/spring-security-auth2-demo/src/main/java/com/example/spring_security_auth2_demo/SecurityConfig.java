@@ -17,11 +17,10 @@ public class SecurityConfig {
         return http
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/").permitAll();
-                    auth.requestMatchers("/favicon.ico").permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .oauth2Login(withDefaults())
-                .formLogin(withDefaults())
+                //.formLogin(withDefaults())
                 .build();
     }
 
