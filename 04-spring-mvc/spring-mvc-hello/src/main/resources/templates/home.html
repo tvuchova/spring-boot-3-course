@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f9f3; /* Light green background */
+            color: #2e7d32; /* Dark green text */
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #388e3c; /* Primary green color for heading */
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #66bb6a; /* Light green button */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #4caf50; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${message}">Default Welcome Message</h1>
+<a href="/welcome?name=John">Go to Welcome Page</a>
+</body>
+</html>
