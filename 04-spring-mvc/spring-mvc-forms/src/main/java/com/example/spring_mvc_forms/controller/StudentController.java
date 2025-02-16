@@ -1,6 +1,7 @@
 package com.example.spring_mvc_forms.controller;
 
-import com.luv2code.springboot.thymeleafdemo.model.Student;
+
+import com.example.spring_mvc_forms.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
