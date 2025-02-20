@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spring App</title>
+    </head>
+    <body>
+        <h1 th:text="|Delete Product ${product.name}|"></h1>
+        <a href="/">Back to Product List</a>
+        <br /><br />
+        <section style="display: flex; flex-direction: row">
+            <form method="POST">
+                <button type="submit" style="margin-right: 10px">Yes</button>
+            </form>
+            <button onclick="window.location.href='/'">No</button>
+        </section>
+    </body>
+</html>

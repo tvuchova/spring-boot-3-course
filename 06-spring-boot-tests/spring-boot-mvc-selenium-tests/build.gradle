@@ -1,0 +1,99 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.4.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'jacoco'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+sourceSets {
+	e2eTest {
+		compileClasspath += main.output
+		runtimeClasspath += main.output
+	}
+}
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	e2eTestImplementation 'io.github.bonigarcia:webdrivermanager:5.8.0'
+	e2eTestImplementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
+	implementation 'org.apache.httpcomponents.client5:httpclient5'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	e2eTestImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//e2eTestImplementation 'org.testcontainers:testcontainers'
+	e2eTestImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	e2eTestImplementation 'org.testcontainers:junit-jupiter'
+	e2eTestImplementation 'org.testcontainers:postgresql'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	e2eTestImplementation sourceSets.main.runtimeClasspath
+	e2eTestImplementation sourceSets.test.runtimeClasspath
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+jacoco {
+	toolVersion = '0.8.7'
+}
+
+jacocoTestReport {
+	dependsOn test
+	finalizedBy jacocoTestCoverageVerification
+	reports {
+		xml.required = true
+	}
+}
+jacocoTestCoverageVerification {
+	dependsOn test
+	violationRules {
+		rule {
+			limit {
+				minimum = 0.8
+			}
+		}
+	}
+}
+
+test {
+	finalizedBy jacocoTestReport
+	useJUnitPlatform()
+	testLogging {
+		exceptionFormat = 'full'
+	}
+}
+
+task e2e(type: Test) {
+	description = 'Runs the end-to-end tests.'
+	group = 'Verification'
+	testClassesDirs = sourceSets.e2eTest.output.classesDirs
+	classpath = sourceSets.e2eTest.runtimeClasspath
+
+	useJUnitPlatform()
+	testLogging {
+		exceptionFormat = 'full'
+	}
+}

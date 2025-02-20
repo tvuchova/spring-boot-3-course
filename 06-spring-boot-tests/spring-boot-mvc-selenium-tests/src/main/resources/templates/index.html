@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spring App</title>
+    </head>
+    <body>
+        <h1>List of Products</h1>
+        <a href="/add">Add Product</a>
+        <br /><br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                    <th>Currency</th>
+                    <th>Expiration Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.id}"></td>
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.quantity}"></td>
+                    <td th:text="${product.unit}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.currency}"></td>
+                    <td th:text="${product.expirationDate}"></td>
+                    <td>
+                        <a th:href="@{/detail/{id}(id=${product.id})}">Detail</a>
+                        <a th:href="@{/edit/{id}(id=${product.id})}">Edit</a>
+                        <a th:href="@{/delete/{id}(id=${product.id})}">Delete</a>
+                    </td>
+                </tr>
+                <tr th:if="${products.size() == 0}">
+                    <td colspan="8">No results found!</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

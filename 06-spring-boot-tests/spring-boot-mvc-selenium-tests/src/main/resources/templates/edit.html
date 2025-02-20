@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Spring App</title>
+    </head>
+    <body>
+        <h1 th:text="${product.id} ? 'Edit Product' : 'Add Product'"></h1>
+        <a href="/">Back to Product List</a>
+        <br /><br />
+        <form th:object="${product}" method="POST">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" th:field="*{name}" required /></td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td><input type="number" step="0.01" th:field="*{quantity}" required /></td>
+                </tr>
+                <tr>
+                    <td>Unit</td>
+                    <td><input type="text" th:field="*{unit}" required /></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input type="number" step="0.01" th:field="*{price}" required /></td>
+                </tr>
+                <tr>
+                    <td>Currency</td>
+                    <td><input type="text" th:field="*{currency}" required /></td>
+                </tr>
+                <tr>
+                    <td>Expiration Date</td>
+                    <td><input type="date" th:field="*{expirationDate}" required /></td>
+                </tr>
+            </table>
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>
