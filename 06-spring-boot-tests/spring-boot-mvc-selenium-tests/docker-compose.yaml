@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: "postgres:12.3"
+    container_name: postgres-spring-container
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=spring
+    ports:
+      - "5432:5432"
+    volumes:
+      - type: bind
+        source: ./docker-setup/init-postgresql-databases.sql
+        target: /docker-entrypoint-initdb.d/init-postgresql-databases.sql
+      - type: volume
+        source: postgres-cars-data
+        target: /var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} -h localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+volumes:
+  postgres-cars-data:
+    name: cars-postgres-data
