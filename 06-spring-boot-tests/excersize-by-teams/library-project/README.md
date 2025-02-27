@@ -1,7 +1,5 @@
 # Simple Library Management System
 
-- [View on Herkoku](https://spring-thymeleaf-library.herokuapp.com/login)
-
 - Login as Admin 
 username: merve
 password: test123
