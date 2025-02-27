@@ -7,4 +7,4 @@ The project uses Spring Boot, Spring Data JPA, and Thymeleaf. The project is usi
 
 To run the project, clone or download it, and then go to the directory/student folder (where the mvnw file is) and run <code>mvn spring-boot:run</code> or just import the program into your IDE.
 
-An example can be found here: https://student-demo.cfapps.io/
+
