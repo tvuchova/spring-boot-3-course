@@ -32,8 +32,15 @@ public class GuideController {
     @PostMapping("/addguide")
     public String addGuide(Guide guide, BindingResult result) {
 
-        if (guide.getName().equals("") || guide.getName().matches(".*\\d+.*") || guide.getSalary() < 1000) {
+        if (guide.getName() == null || !guide.getName().matches("^[A-Za-z ]+$")) {
+            result.rejectValue("name", "error.name", "Only letters are allowed");
+        }
+
+     /*   if (guide.getName().equals("") || guide.getName().matches(".*\\d+.*") || guide.getSalary() < 1000) {
             result.rejectValue("name", "name");
+            return "addguide";
+        }*/
+        if (result.hasErrors()) {
             return "addguide";
         }
 
