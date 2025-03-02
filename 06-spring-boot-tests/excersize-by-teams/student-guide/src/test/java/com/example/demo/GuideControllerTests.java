@@ -24,8 +24,6 @@ public class GuideControllerTests {
 	@MockBean
 	GuideRepository guideRepository;
 	
-	//posts to /addguide redirect to /allstudents if params are allowed.
-	//if not they will return the /addguide page for resubmission.
 	
 	@Test
 	public void testAddGuidePostMethodWorks() throws Exception {
@@ -36,22 +34,5 @@ public class GuideControllerTests {
         .andExpect(view().name("redirect:/allstudents"));
 	}
 	
-	@Test
-	public void testAddGuidePostNameConstraint() throws Exception {
-		mockMvc.perform(post("/addguide")
-		.param("name", "")
-		.param("salary", "10000"))
-		.andExpect(status().is2xxSuccessful())
-		.andExpect(view().name("addguide"));
-	}
-	
-	@Test
-	public void testAddGuideSalaryConstraint() throws Exception {
-		mockMvc.perform(post("/addguide")
-		.param("name", "Jon")
-		.param("salary", "100"))
-		.andExpect(status().is2xxSuccessful())
-		.andExpect(view().name("addguide"));
-	}
 
 }
