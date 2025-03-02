@@ -34,13 +34,13 @@
             <tr>
                 <td>Name:</td>
                 <td><input th:field="*{name}" type="text"/></td>
-                <td th:errors="*{name}" th:if="${#fields.hasErrors('name')}">Name
-                    Error
+                <td th:if="${#fields.hasErrors('name')}" style="color: red;">
+                    <span th:errors="*{name}">Name Error</span>
                 </td>
             </tr>
             <tr>
                 <td>Salary</td>
-                <td><input th:field="*{salary}" type="text"/></td>
+                <td><input th:field="*{salary}" type="number" step="0.01"/></td>
 
             </tr>
             <tr>
