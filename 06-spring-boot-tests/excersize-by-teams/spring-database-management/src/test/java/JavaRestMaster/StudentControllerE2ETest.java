@@ -20,11 +20,6 @@ public class StudentControllerE2ETest {
     private WebDriver driver;
     private WebDriverWait wait;
 
-/*    @BeforeAll
-    public static void setupClass() {
-        // Set up WebDriverManager to automatically manage the ChromeDriver
-        WebDriverManager.chromedriver().setup();
-    }*/
 
     @BeforeEach
     public void setup() {
