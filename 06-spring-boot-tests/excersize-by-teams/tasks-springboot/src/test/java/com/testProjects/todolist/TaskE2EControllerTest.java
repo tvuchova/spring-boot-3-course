@@ -34,7 +34,6 @@ public class TaskE2EControllerTest {
     public void testCreateTask() {
         login();
 
-        // Go to the create task page
         driver.get("http://localhost:8080/tasks/create");
 
         // Fill in task details

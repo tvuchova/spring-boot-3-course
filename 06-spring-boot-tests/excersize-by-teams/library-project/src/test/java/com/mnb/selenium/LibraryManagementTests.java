@@ -32,7 +32,6 @@ public class LibraryManagementTests {
     public void testLoginPageLoads() {
         driver.get("http://localhost:8080/login");
 
-        // Check if login form exists
         WebElement loginForm = driver.findElement(By.tagName("form"));
         assertTrue(loginForm.isDisplayed());
     }
@@ -45,9 +44,8 @@ public class LibraryManagementTests {
         driver.findElement(By.name("username")).sendKeys("merve");
         driver.findElement(By.name("password")).sendKeys("test123");
 
-        // Submit the form
         driver.findElement(By.tagName("form")).submit();
-        // Verify the login was successful (redirects to index page)
+
         assertEquals("http://localhost:8080/", driver.getCurrentUrl());
     }
 
@@ -57,13 +55,12 @@ public class LibraryManagementTests {
         driver.findElement(By.name("username")).sendKeys("merve");
         driver.findElement(By.name("password")).sendKeys("test123");
 
-        // Submit the form
+        // Submit
         driver.findElement(By.tagName("form")).submit();
 
-        // Click on "Books" button
+        // Click on "Books"
         driver.findElement(By.xpath("//a[contains(text(), 'BOOKS')]")).click();
 
-        // Verify navigation to books page
         assertEquals("http://localhost:8080/books/list", driver.getCurrentUrl());
     }
 
