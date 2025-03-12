@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket STOMP Client</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stomp-websocket/lib/stomp.min.js"></script>
+</head>
+<body>
+<h2>Chat</h2>
+<input type="text" id="messageInput" placeholder="Type a message...">
+<button onclick="sendMessage()">Send</button>
+<ul id="messages"></ul>
+
+<script>
+    let stompClient = null;
+
+    function connect() {
+        const socket = new SockJS("http://localhost:8080/ws");
+        stompClient = Stomp.over(socket);
+
+        stompClient.connect({}, () => {
+            console.log("Connected!");
+
+            stompClient.subscribe("/topic/messages", (message) => {
+                const receivedMessage = JSON.parse(message.body);
+                displayMessage(receivedMessage.sender + ": " + receivedMessage.message);
+            });
+        });
+    }
+
+    function sendMessage() {
+        const message = document.getElementById("messageInput").value;
+        const chatMessage = { sender: "User1", message: message };
+        stompClient.send("/app/chat", {}, JSON.stringify(chatMessage));
+    }
+
+    function displayMessage(message) {
+        const li = document.createElement("li");
+        li.textContent = message;
+        document.getElementById("messages").appendChild(li);
+    }
+
+    connect();
+</script>
+</body>
+</html>
