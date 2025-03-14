@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color Picker</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+        .slider-container label {
+            width: 20px;
+            font-weight: bold;
+        }
+        .slider-container input {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .color-box {
+            width: 150px;
+            height: 80px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <label for="r">R:</label>
+    <input type="range" id="r" min="0" max="255" value="0">
+    <span id="r-value">0</span>
+</div>
+
+<div class="slider-container">
+    <label for="g">G:</label>
+    <input type="range" id="g" min="0" max="255" value="0">
+    <span id="g-value">0</span>
+</div>
+
+<div class="slider-container">
+    <label for="b">B:</label>
+    <input type="range" id="b" min="0" max="255" value="0">
+    <span id="b-value">0</span>
+</div>
+
+<div class="color-box" id="color-box"></div>
+
+<script>
+    let socket = new SockJS("http://localhost:8080/ws");
+    let stompClient = Stomp.over(socket);
+    let debounceTimeout;
+
+    stompClient.connect({}, () => {
+        console.log("Connected to WebSocket");
+
+        stompClient.subscribe("/topic/color", (message) => {
+            const rgb = JSON.parse(message.body);
+            document.getElementById("color-box").style.backgroundColor = `rgb(${rgb.red}, ${rgb.green}, ${rgb.blue})`;
+        });
+    });
+
+    function sendRGB() {
+        const red = document.getElementById("r").value;
+        const green = document.getElementById("g").value;
+        const blue = document.getElementById("b").value;
+
+        document.getElementById("r-value").textContent = red;
+        document.getElementById("g-value").textContent = green;
+        document.getElementById("b-value").textContent = blue;
+
+        stompClient.send("/app/color", {}, JSON.stringify({ red, green, blue }));
+    }
+
+    function debounceSendRGB() {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(sendRGB, 300);
+    }
+
+    document.getElementById("r").addEventListener("input", debounceSendRGB);
+    document.getElementById("g").addEventListener("input", debounceSendRGB);
+    document.getElementById("b").addEventListener("input", debounceSendRGB);
+</script>
+
+</body>
+</html>
