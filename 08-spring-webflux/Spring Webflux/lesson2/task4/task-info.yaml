@@ -1,0 +1,17 @@
+type: edu
+files:
+  - name: test/com/example/Tests.java
+    visible: false
+    propagatable: false
+  - name: src/main/java/com/example/WebClientController.java
+    visible: true
+  - name: src/main/java/com/example/SpringReactiveApplication.java
+    visible: true
+  - name: src/main/java/com/example/solution/User.java
+    visible: true
+  - name: src/main/java/com/example/solution/WebClientConfig.java
+    visible: true
+  - name: src/main/java/com/example/solution/WebClientService.java
+    visible: true
+  - name: src/main/java/com/example/solution/WebClientController.java
+    visible: true

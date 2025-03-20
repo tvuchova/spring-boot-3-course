@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-03-19T06:34:04" hostname="R59RM22RCV" time="0.015">
+  <properties/>
+  <testcase name="testSolution()" classname="Tests" time="0.015">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;reactor.core.publisher.Flux.as(java.util.function.Function)&quot; because the return value of &quot;Task.explore_concat()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;reactor.core.publisher.Flux.as(java.util.function.Function)&quot; because the return value of &quot;Task.explore_concat()&quot; is null
+	at Tests.testSolution(Tests.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

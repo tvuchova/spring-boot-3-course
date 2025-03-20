@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-17T20:57:18" hostname="R59RM22RCV" time="0.61">
+  <properties/>
+  <testcase name="testGetMessages()" classname="com.example.Tests" time="0.61"/>
+  <system-out><![CDATA[22:57:17.905 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:57:17.956 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-03-17T22:57:18.143+02:00  INFO 26232 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.5 with PID 26232 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/spring/git_source_code/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task2)
+2025-03-17T22:57:18.144+02:00  INFO 26232 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: "default"
+2025-03-17T22:57:18.781+02:00  INFO 26232 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 52725 (http)
+2025-03-17T22:57:18.791+02:00  INFO 26232 --- [    Test worker] com.example.Tests                        : Started Tests in 0.757 seconds (process running for 1.28)
+2025-03-17T22:57:19.310+02:00 ERROR 26232 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/A1B1E68/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.4/58e850dde88f3cf20f41f659440bef33f6c4fe02/byte-buddy-agent-1.15.4.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+type: edu
+files:
+  - name: src/main/java/com/example/SpringReactiveApplication.java
+    visible: true
+  - name: src/main/java/com/example/TaskController.java
+    visible: true
+  - name: test/com/example/Tests.java
+    visible: false
+    propagatable: false
+  - name: src/main/java/com/example/solution/TaskController.java
+    visible: true

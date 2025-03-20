@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.Tests" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-03-19T21:39:05" hostname="R59RM22RCV" time="1.223">
+  <properties/>
+  <testcase name="testGetAllUsers()" classname="com.example.Tests" time="1.124"/>
+  <testcase name="testGetUserById()" classname="com.example.Tests" time="0.098"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-03-19T23:39:04.820+02:00  INFO 44698 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.2 with PID 44698 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/spring/git_source_code/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson2/task4)
+2025-03-19T23:39:04.821+02:00  INFO 44698 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: "default"
+2025-03-19T23:39:05.387+02:00  INFO 44698 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 64677 (http)
+2025-03-19T23:39:05.396+02:00  INFO 44698 --- [    Test worker] com.example.Tests                        : Started Tests in 0.694 seconds (process running for 1.195)
+2025-03-19T23:39:05.929+02:00 ERROR 44698 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+]]></system-out>
+  <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/A1B1E68/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.4/58e850dde88f3cf20f41f659440bef33f6c4fe02/byte-buddy-agent-1.15.4.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
