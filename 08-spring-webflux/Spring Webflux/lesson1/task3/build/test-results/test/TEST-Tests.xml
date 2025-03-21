@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-19T06:25:05" hostname="R59RM22RCV" time="0.085">
+<testsuite name="Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-03-21T14:29:13" hostname="M54GXCNPN6" time="0.014">
   <properties/>
-  <testcase name="testNamesFlux_map()" classname="Tests" time="0.085"/>
+  <testcase name="testNamesFlux_map()" classname="Tests" time="0.014">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;org.reactivestreams.Publisher.subscribe(org.reactivestreams.Subscriber)&quot; because &quot;publisher&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;org.reactivestreams.Publisher.subscribe(org.reactivestreams.Subscriber)&quot; because &quot;publisher&quot; is null
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.toVerifierAndSubscribe(DefaultStepVerifierBuilder.java:867)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:823)
+	at reactor.test.DefaultStepVerifierBuilder$DefaultStepVerifier.verify(DefaultStepVerifierBuilder.java:815)
+	at reactor.test.DefaultStepVerifierBuilder.verifyComplete(DefaultStepVerifierBuilder.java:682)
+	at Tests.testNamesFlux_map(Tests.java:14)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

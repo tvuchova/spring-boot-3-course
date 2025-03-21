@@ -3,8 +3,6 @@ files:
   - name: test/Tests.java
     visible: false
     propagatable: false
-  - name: src/SpringReactiveApplication.java
-    visible: true
   - name: src/Task.java
     visible: true
   - name: src/solution/Task.java

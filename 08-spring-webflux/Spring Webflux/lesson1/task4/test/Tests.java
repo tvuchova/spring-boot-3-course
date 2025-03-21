@@ -9,7 +9,6 @@ public class Tests {
   Task task = new Task();
   @Test
   public void testSolution() {
-    // put your test here
     task.explore_concat().as(StepVerifier::create)
             .expectNext("A", "B", "C", "D", "E", "F")
             .verifyComplete();

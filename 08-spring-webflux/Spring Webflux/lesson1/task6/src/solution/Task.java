@@ -6,7 +6,6 @@ import java.time.Duration;
 import java.util.List;
 
 public class Task {
-  //put your task here
   public Flux<String> namesFlux_map(int stringLength) {
       var namesList = List.of("alex", "ben", "chloe");
       return Flux.fromIterable(namesList)

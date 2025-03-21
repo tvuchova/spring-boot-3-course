@@ -10,8 +10,12 @@ public class Task
     // TODO: Implement this method to return a Flux<String>
 
     public Flux<String> getMessages(int len) {
-         // Replace with actual implementation
-        return null;
+        var namesList = List.of("alex", "ben", "chloe");
+        return Flux.fromIterable(namesList)
+                .map(String::toUpperCase)
+                .filter(s -> s.length() > len)
+                .flatMap(this::splitString);
+
     }
     private Flux<String> splitString(String name) {
         return Flux.fromArray(name.split("")); // Converts "ALEX" -> ["A", "L", "E", "X"]

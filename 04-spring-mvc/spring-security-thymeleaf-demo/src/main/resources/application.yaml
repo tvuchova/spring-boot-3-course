@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-security-thymeleaf-demo
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: my-mvc-client
+            client-secret: RQyDaVKO6FolriSrmM9YfoVuMOUeYklL
+            scope: openid,profile,email
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://localhost:8090/login/oauth2/code/keycloak"
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:7080/realms/MyAppRealm
+server:
+  port: 8090

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-19T06:49:02" hostname="R59RM22RCV" time="0.085">
+<testsuite name="Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-03-21T14:31:43" hostname="M54GXCNPN6" time="0.011">
   <properties/>
-  <testcase name="testSolution()" classname="Tests" time="0.085"/>
+  <testcase name="testSolution()" classname="Tests" time="0.011">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;reactor.core.publisher.Flux.as(java.util.function.Function)&quot; because the return value of &quot;Task.explore_zip()&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;reactor.core.publisher.Flux.as(java.util.function.Function)&quot; because the return value of &quot;Task.explore_zip()&quot; is null
+	at Tests.testSolution(Tests.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

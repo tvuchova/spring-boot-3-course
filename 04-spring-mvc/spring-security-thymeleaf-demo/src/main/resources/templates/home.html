@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+<h1>Добре дошли!</h1>
+<div th:if="${name}">
+    <p>Име: <span th:text="${name}"></span></p>
+    <p>Email: <span th:text="${email}"></span></p>
+    <a href="/logout">Изход</a>
+</div>
+<div th:if="${name == null}">
+    <a href="/oauth2/authorization/keycloak">Вход с Keycloak</a>
+</div>
+</body>
+</html>
