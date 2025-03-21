@@ -1,8 +1,7 @@
 import reactor.core.publisher.Flux;
 
 
-public class Task
-{
+public class Task {
     // TODO: Implement this method to return a Flux<String>
 
     public Flux<String> getMessages(int len) {
@@ -10,6 +9,7 @@ public class Task
         return null;
 
     }
+
     private Flux<String> splitString(String name) {
         return null; // Converts "ALEX" -> ["A", "L", "E", "X"]
     }

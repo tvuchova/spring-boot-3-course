@@ -11,9 +11,7 @@ import reactor.core.publisher.Flux;
 public class TaskController {
     // TODO: Implement this method to return a Flux<Integer>
     @GetMapping("/primes")
-    public Flux<Integer> getPrimeNumbers(@RequestParam(name="start") Integer start, @RequestParam(name="end") Integer end) {
+    public Flux<Integer> getPrimeNumbers(@RequestParam(name = "start") Integer start, @RequestParam(name = "end") Integer end) {
         return null;//put your solution here
     }
-
-
 }
