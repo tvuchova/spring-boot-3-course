@@ -42,8 +42,8 @@ public class SecurityConfig {
                 )
                 .oidcLogout(oidc->oidc.backChannel(Customizer.withDefaults()))
                 .logout(logout ->
-                        logout.logoutSuccessUrl("/")
-                        //logout.logoutSuccessUrl("http://localhost:7080/realms/MyAppRealm/protocol/openid-connect/logout?redirect_uri=http://localhost:8090/")
+                       // logout.logoutSuccessUrl("/")
+                        logout.logoutSuccessUrl("http://localhost:7080/realms/MyAppRealm/protocol/openid-connect/logout?redirect_uri=http://localhost:8090/")
                         .invalidateHttpSession(true)
                         .clearAuthentication(true)
                         .deleteCookies("JSESSIONID"));
@@ -59,8 +59,6 @@ public class SecurityConfig {
             List<String> roles = oidcUser.getClaimAsMap("realm_access") != null
                     ? (List<String>) oidcUser.getClaimAsMap("realm_access").get("roles")
                     : List.of();
-            System.out.println("ID Token Claims: " + oidcUser.getIdToken().getClaims());
-            System.out.println("User Info Claims: " + oidcUser.getUserInfo().getClaims());
 
             System.out.println("Keycloak roles: " + roles);
             Collection<GrantedAuthority> mappedAuthorities = roles.stream()

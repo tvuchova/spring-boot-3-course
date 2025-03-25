@@ -1,6 +1,14 @@
 type: marketplace
 title: Spring Webflux
 language: English
+summary: "This academic course provides a comprehensive introduction to reactive programming\
+  \ using Spring WebFlux. Students will explore key concepts such as Flux, Mono, and\
+  \ Backpressure, learning how to build efficient, non-blocking web applications.\
+  \ The course emphasizes practical implementation through hands-on exercises, covering\
+  \ the core principles of reactive streams and their integration with modern Java\
+  \ features."
+vendor:
+  name: Temenuzhka Vuchova
 programming_language: Java
 content:
   - lesson1

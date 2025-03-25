@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.643s</div>
+<div class="counter">0.510s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,16 +61,40 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
 </li>
 <li>
-<a href="#tab2">Standard error</a>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testGetMessages()"></a>
+<h3 class="failures">testGetMessages()</h3>
+<span class="code">
+<pre>java.lang.AssertionError: Status expected:&lt;200 OK&gt; but was:&lt;404 NOT_FOUND&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.reactive.server.StatusAssertions.lambda$assertStatusAndReturn$4(StatusAssertions.java:236)
+	at org.springframework.test.web.reactive.server.ExchangeResult.assertWithDiagnostics(ExchangeResult.java:232)
+	at org.springframework.test.web.reactive.server.StatusAssertions.assertStatusAndReturn(StatusAssertions.java:236)
+	at org.springframework.test.web.reactive.server.StatusAssertions.isOk(StatusAssertions.java:68)
+	at com.example.Tests.testGetMessages(Tests.java:28)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -81,17 +105,17 @@
 </tr>
 </thead>
 <tr>
-<td class="success">testGetMessages()</td>
-<td class="success">0.643s</td>
-<td class="success">passed</td>
+<td class="failures">testGetMessages()</td>
+<td class="failures">0.510s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>22:50:10.380 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:50:10.435 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
+<pre>19:16:38.114 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:16:38.151 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -102,15 +126,32 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-17T22:50:10.641+02:00  INFO 25628 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.5 with PID 25628 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/spring/git_source_code/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task1)
-2025-03-17T22:50:10.642+02:00  INFO 25628 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-03-17T22:50:11.284+02:00  INFO 25628 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 50576 (http)
-2025-03-17T22:50:11.295+02:00  INFO 25628 --- [    Test worker] com.example.Tests                        : Started Tests in 0.793 seconds (process running for 1.415)
-2025-03-17T22:50:11.833+02:00 ERROR 25628 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-21T19:16:38.276+02:00  INFO 3778 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.6 with PID 3778 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/git_repo/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task1)
+2025-03-21T19:16:38.276+02:00  INFO 3778 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-03-21T19:16:38.714+02:00  INFO 3778 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 50213 (http)
+2025-03-21T19:16:38.721+02:00  INFO 3778 --- [    Test worker] com.example.Tests                        : Started Tests in 0.525 seconds (process running for 0.903)
+2025-03-21T19:16:39.143+02:00 ERROR 3778 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-21T19:16:39.228+02:00 ERROR 3778 --- [    Test worker] o.s.t.w.reactive.server.ExchangeResult   : Request details for assertion failure:
+
+&gt; GET http://localhost:50213/api/messages
+&gt; accept-encoding: [gzip]
+&gt; user-agent: [ReactorNetty/1.2.3]
+&gt; host: [localhost:50213]
+&gt; accept: [*/*]
+&gt; WebTestClient-Request-Id: [1]
+
+No content
+
+&lt; 404 NOT_FOUND Not Found
+&lt; Content-Type: [application/json]
+&lt; Content-Length: [126]
+
+{&quot;timestamp&quot;:&quot;2025-03-21T17:16:39.206+00:00&quot;,&quot;path&quot;:&quot;/api/messages&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;requestId&quot;:&quot;e5845c6f-1&quot;}
+
 </pre>
 </span>
 </div>
-<div id="tab2" class="tab">
+<div id="tab3" class="tab">
 <h2>Standard error</h2>
 <span class="code">
 <pre>Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
@@ -129,7 +170,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10</a> at 17 Mar 2025, 22:50:14</p>
+<a href="http://www.gradle.org">Gradle 8.10</a> at Mar 21, 2025, 7:16:41 PM</p>
 </div>
 </div>
 </body>
