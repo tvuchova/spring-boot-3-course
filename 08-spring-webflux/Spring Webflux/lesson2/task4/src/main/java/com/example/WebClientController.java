@@ -1,4 +1,4 @@
-package main.java.com.example;
+package com.example;
 
 import com.example.solution.User;
 import com.example.solution.WebClientService;

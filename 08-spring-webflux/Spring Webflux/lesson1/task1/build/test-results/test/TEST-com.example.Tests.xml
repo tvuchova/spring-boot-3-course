@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-17T20:50:11" hostname="R59RM22RCV" time="0.643">
+<testsuite name="com.example.Tests" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-03-21T17:16:38" hostname="M54GXCNPN6" time="0.51">
   <properties/>
-  <testcase name="testGetMessages()" classname="com.example.Tests" time="0.643"/>
-  <system-out><![CDATA[22:50:10.380 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:50:10.435 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
+  <testcase name="testGetMessages()" classname="com.example.Tests" time="0.51">
+    <failure message="java.lang.AssertionError: Status expected:&lt;200 OK&gt; but was:&lt;404 NOT_FOUND&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;200 OK&gt; but was:&lt;404 NOT_FOUND&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)
+	at org.springframework.test.web.reactive.server.StatusAssertions.lambda$assertStatusAndReturn$4(StatusAssertions.java:236)
+	at org.springframework.test.web.reactive.server.ExchangeResult.assertWithDiagnostics(ExchangeResult.java:232)
+	at org.springframework.test.web.reactive.server.StatusAssertions.assertStatusAndReturn(StatusAssertions.java:236)
+	at org.springframework.test.web.reactive.server.StatusAssertions.isOk(StatusAssertions.java:68)
+	at com.example.Tests.testGetMessages(Tests.java:28)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[19:16:38.114 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:16:38.151 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,11 +27,28 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-17T22:50:10.641+02:00  INFO 25628 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.5 with PID 25628 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/spring/git_source_code/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task1)
-2025-03-17T22:50:10.642+02:00  INFO 25628 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: "default"
-2025-03-17T22:50:11.284+02:00  INFO 25628 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 50576 (http)
-2025-03-17T22:50:11.295+02:00  INFO 25628 --- [    Test worker] com.example.Tests                        : Started Tests in 0.793 seconds (process running for 1.415)
-2025-03-17T22:50:11.833+02:00 ERROR 25628 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-21T19:16:38.276+02:00  INFO 3778 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.6 with PID 3778 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/git_repo/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task1)
+2025-03-21T19:16:38.276+02:00  INFO 3778 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: "default"
+2025-03-21T19:16:38.714+02:00  INFO 3778 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 50213 (http)
+2025-03-21T19:16:38.721+02:00  INFO 3778 --- [    Test worker] com.example.Tests                        : Started Tests in 0.525 seconds (process running for 0.903)
+2025-03-21T19:16:39.143+02:00 ERROR 3778 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-21T19:16:39.228+02:00 ERROR 3778 --- [    Test worker] o.s.t.w.reactive.server.ExchangeResult   : Request details for assertion failure:
+
+> GET http://localhost:50213/api/messages
+> accept-encoding: [gzip]
+> user-agent: [ReactorNetty/1.2.3]
+> host: [localhost:50213]
+> accept: [*/*]
+> WebTestClient-Request-Id: [1]
+
+No content
+
+< 404 NOT_FOUND Not Found
+< Content-Type: [application/json]
+< Content-Length: [126]
+
+{"timestamp":"2025-03-21T17:16:39.206+00:00","path":"/api/messages","status":404,"error":"Not Found","requestId":"e5845c6f-1"}
+
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/A1B1E68/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.4/58e850dde88f3cf20f41f659440bef33f6c4fe02/byte-buddy-agent-1.15.4.jar)

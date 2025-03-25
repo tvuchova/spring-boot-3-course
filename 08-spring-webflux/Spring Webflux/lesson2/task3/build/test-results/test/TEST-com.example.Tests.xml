@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.Tests" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-03-19T20:44:10" hostname="R59RM22RCV" time="0.729">
+<testsuite name="com.example.Tests" tests="4" skipped="0" failures="2" errors="0" timestamp="2025-03-21T17:16:52" hostname="M54GXCNPN6" time="0.548">
   <properties/>
-  <testcase name="testInvalidQueryParameters()" classname="com.example.Tests" time="0.691"/>
-  <testcase name="testNoPrimesInRange()" classname="com.example.Tests" time="0.021"/>
-  <testcase name="testFindPrimesInRange()" classname="com.example.Tests" time="0.009"/>
-  <testcase name="testFindPrimesInLargeRange()" classname="com.example.Tests" time="0.006"/>
-  <system-out><![CDATA[22:44:09.998 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-22:44:10.055 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
+  <testcase name="testInvalidQueryParameters()" classname="com.example.Tests" time="0.515"/>
+  <testcase name="testNoPrimesInRange()" classname="com.example.Tests" time="0.017"/>
+  <testcase name="testFindPrimesInRange()" classname="com.example.Tests" time="0.009">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[2, 3, 5, 7]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[2, 3, 5, 7]&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at app//com.example.Tests.lambda$testFindPrimesInRange$0(Tests.java:39)
+	at app//org.springframework.test.web.reactive.server.DefaultWebTestClient$DefaultBodySpec.lambda$value$3(DefaultWebTestClient.java:581)
+	at app//org.springframework.test.web.reactive.server.ExchangeResult.assertWithDiagnostics(ExchangeResult.java:232)
+	at app//org.springframework.test.web.reactive.server.DefaultWebTestClient$DefaultBodySpec.value(DefaultWebTestClient.java:581)
+	at app//com.example.Tests.testFindPrimesInRange(Tests.java:36)
+	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="testFindPrimesInLargeRange()" classname="com.example.Tests" time="0.005">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[53, 59, 61, 67, 71, 73, 79, 83, 89, 97]&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;[]&gt; but was: &lt;[53, 59, 61, 67, 71, 73, 79, 83, 89, 97]&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at app//com.example.Tests.lambda$testFindPrimesInLargeRange$2(Tests.java:65)
+	at app//org.springframework.test.web.reactive.server.DefaultWebTestClient$DefaultBodySpec.lambda$value$3(DefaultWebTestClient.java:581)
+	at app//org.springframework.test.web.reactive.server.ExchangeResult.assertWithDiagnostics(ExchangeResult.java:232)
+	at app//org.springframework.test.web.reactive.server.DefaultWebTestClient$DefaultBodySpec.value(DefaultWebTestClient.java:581)
+	at app//com.example.Tests.testFindPrimesInLargeRange(Tests.java:62)
+	at java.base@21.0.6/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base@21.0.6/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[19:16:51.496 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:16:51.534 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -17,11 +51,45 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-19T22:44:10.263+02:00  INFO 42112 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.2 with PID 42112 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/spring/git_source_code/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson2/task3)
-2025-03-19T22:44:10.265+02:00  INFO 42112 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: "default"
-2025-03-19T22:44:10.887+02:00  INFO 42112 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 63160 (http)
-2025-03-19T22:44:10.898+02:00  INFO 42112 --- [    Test worker] com.example.Tests                        : Started Tests in 0.775 seconds (process running for 1.35)
-2025-03-19T22:44:11.470+02:00 ERROR 42112 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-21T19:16:51.656+02:00  INFO 3845 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.6 with PID 3845 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/git_repo/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson2/task3)
+2025-03-21T19:16:51.656+02:00  INFO 3845 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: "default"
+2025-03-21T19:16:52.077+02:00  INFO 3845 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 50252 (http)
+2025-03-21T19:16:52.085+02:00  INFO 3845 --- [    Test worker] com.example.Tests                        : Started Tests in 0.511 seconds (process running for 0.901)
+2025-03-21T19:16:52.509+02:00 ERROR 3845 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-21T19:16:52.627+02:00 ERROR 3845 --- [    Test worker] o.s.t.w.reactive.server.ExchangeResult   : Request details for assertion failure:
+
+> GET http://localhost:50252/api/primes?start=1&end=10
+> accept-encoding: [gzip]
+> user-agent: [ReactorNetty/1.2.3]
+> host: [localhost:50252]
+> accept: [*/*]
+> WebTestClient-Request-Id: [1]
+
+No content
+
+< 200 OK OK
+< transfer-encoding: [chunked]
+< Content-Type: [application/json]
+
+[]
+
+2025-03-21T19:16:52.634+02:00 ERROR 3845 --- [    Test worker] o.s.t.w.reactive.server.ExchangeResult   : Request details for assertion failure:
+
+> GET http://localhost:50252/api/primes?start=50&end=100
+> accept-encoding: [gzip]
+> user-agent: [ReactorNetty/1.2.3]
+> host: [localhost:50252]
+> accept: [*/*]
+> WebTestClient-Request-Id: [1]
+
+No content
+
+< 200 OK OK
+< transfer-encoding: [chunked]
+< Content-Type: [application/json]
+
+[]
+
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
 WARNING: A Java agent has been loaded dynamically (/Users/A1B1E68/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.4/58e850dde88f3cf20f41f659440bef33f6c4fe02/byte-buddy-agent-1.15.4.jar)
