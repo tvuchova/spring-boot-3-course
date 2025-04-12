@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.483s</div>
+<div class="counter">0.554s</div>
 <p>duration</p>
 </div>
 </td>
@@ -106,7 +106,7 @@
 </thead>
 <tr>
 <td class="failures">testGetMessages()</td>
-<td class="failures">0.483s</td>
+<td class="failures">0.554s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -114,8 +114,8 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:16:42.669 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:16:42.702 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
+<pre>13:17:04.134 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.Tests]: Tests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:17:04.178 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.SpringReactiveApplication for test class com.example.Tests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -126,17 +126,17 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-21T19:16:42.823+02:00  INFO 3784 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.6 with PID 3784 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/git_repo/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task2)
-2025-03-21T19:16:42.824+02:00  INFO 3784 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2025-03-21T19:16:43.217+02:00  INFO 3784 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 50219 (http)
-2025-03-21T19:16:43.224+02:00  INFO 3784 --- [    Test worker] com.example.Tests                        : Started Tests in 0.482 seconds (process running for 0.854)
-2025-03-21T19:16:43.627+02:00 ERROR 3784 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-2025-03-21T19:16:43.704+02:00 ERROR 3784 --- [    Test worker] o.s.t.w.reactive.server.ExchangeResult   : Request details for assertion failure:
+2025-03-28T13:17:04.321+02:00  INFO 78435 --- [    Test worker] com.example.Tests                        : Starting Tests using Java 21.0.6 with PID 78435 (started by A1B1E68 in /Users/A1B1E68/Internet_lessons/git_repo/spring-boot-3-course/08-spring-webflux/Spring Webflux/lesson1/task2)
+2025-03-28T13:17:04.321+02:00  INFO 78435 --- [    Test worker] com.example.Tests                        : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-03-28T13:17:04.818+02:00  INFO 78435 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 53445 (http)
+2025-03-28T13:17:04.826+02:00  INFO 78435 --- [    Test worker] com.example.Tests                        : Started Tests in 0.596 seconds (process running for 1.005)
+2025-03-28T13:17:05.287+02:00 ERROR 78435 --- [    Test worker] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2025-03-28T13:17:05.377+02:00 ERROR 78435 --- [    Test worker] o.s.t.w.reactive.server.ExchangeResult   : Request details for assertion failure:
 
-&gt; GET http://localhost:50219/api/messages
+&gt; GET http://localhost:53445/api/messages
 &gt; accept-encoding: [gzip]
 &gt; user-agent: [ReactorNetty/1.2.3]
-&gt; host: [localhost:50219]
+&gt; host: [localhost:53445]
 &gt; accept: [*/*]
 &gt; WebTestClient-Request-Id: [1]
 
@@ -146,7 +146,7 @@ No content
 &lt; Content-Type: [application/json]
 &lt; Content-Length: [126]
 
-{&quot;timestamp&quot;:&quot;2025-03-21T17:16:43.683+00:00&quot;,&quot;path&quot;:&quot;/api/messages&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;requestId&quot;:&quot;3d281e59-1&quot;}
+{&quot;timestamp&quot;:&quot;2025-03-28T11:17:05.355+00:00&quot;,&quot;path&quot;:&quot;/api/messages&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;requestId&quot;:&quot;01c27dc0-1&quot;}
 
 </pre>
 </span>
@@ -170,7 +170,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10</a> at Mar 21, 2025, 7:16:46 PM</p>
+<a href="http://www.gradle.org">Gradle 8.10</a> at Mar 28, 2025, 1:17:07 PM</p>
 </div>
 </div>
 </body>
